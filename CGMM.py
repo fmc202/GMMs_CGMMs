@@ -4,27 +4,6 @@ import numpy as np
 # no bugs found
 
 
-def con_cav_crustal(M, Rrup, PGA, Vs30):
-    # CAV in m/s
-    lnCAV = 1.7908 + 0.6721 * np.log(PGA) + 0.5756 * M - 0.4654 * np.log(Vs30) - 0.01 * np.log(Rrup)
-    tau = 0.17
-    phi = 0.26
-    sigma = np.sqrt(tau ** 2 + phi ** 2)
-
-    return lnCAV, tau, phi, sigma
-
-
-def con_cavdp_crustal(M, Rrup, CAV):
-    # cav input/ output in gs
-    c0 = 0.0072
-    c1 = 1.115
-    c2 = -0.067
-    c3 = -0.0033
-    lnCAVdp = c0 + c1 * np.log(CAV) + c2 * (M - 6.5) * (M >= 6.5) + c3 * Rrup
-
-    return lnCAVdp
-
-
 def TM_crustal(M):
     # find the Tpgv of PSA(Tpgv) which is magnitude dependent
     Tpgv = np.exp(-4.09 + 0.66 * M)
