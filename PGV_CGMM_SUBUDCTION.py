@@ -52,8 +52,6 @@ def con_pgv_crustal(M, Rrup, Vs30, lnSa_Tpgv, tra_sigma=None):
 
 
 def con_pgv_sub(M, Rrup, Vs30, lnSa_Tpgv, mechanism, tra_sigma=None):
-    # this should be equivalent to con_pgv_sub but with different centering M and Vs30 values
-    # Try use con_pgv_sub instead
 
     F = mechanism
     a = np.array([[7.12, 0.633, 0.674, 0.66, -0.038, -0.51, 0.018, 0.093, 0.22, 0.33], [6.12, 0.76, 0.71, 0.77, 0.017, -0.57, -0.12, -0.01, 0.21, 0.31]])
